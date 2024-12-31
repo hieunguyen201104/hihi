@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio&display=swap" rel="stylesheet">
+    <title>Happy New Year 2025</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="jquery.fireworks.js"></script>
+</head>
+<body>
+    <div id="happy" data-text="Happy"><h2>Happy New Year</h2></div>
+    <div id="newyear" data-text="New Year 2024"><h1> 2025</h1></div>
+
+    <!-- Red Envelope Section -->
+    <div class="red-envelope" id="redEnvelope">
+    </div>
+
+    <!-- Greeting Message Box -->
+    <div class="message-box" id="messageBox">
+        <h2>Chúc Mừng Năm Mới!</h2>
+        <p>Năm cũ đã qua năm mới đã tới, mong sự bình an sẽ đến với tất cả mọi người.</p>
+        <p>Chúc mọi người năm mới thật nhiều sức khỏe, gặp nhiều may mắn và thành công hơn trong công việc. </p>
+        <button id="closeMessageBox">Close</button>
+    </div>
+
+    <script>
+        // Initialize fireworks effect on body
+        $(document).ready(function() {
+            $('body').fireworks({
+                sound: false,
+                opacity: 0.8,
+                width: '100%',
+                height: '100%'
+            });
+
+            // Click event for the red envelope
+            document.getElementById('redEnvelope').addEventListener('click', function() {
+                // Display the message box with greeting and lucky message
+                var messageBox = document.getElementById('messageBox');
+                messageBox.style.display = 'block';
+            });
+
+            // Close button for message box
+            document.getElementById('closeMessageBox').addEventListener('click', function() {
+                // Hide the message box when the close button is clicked
+                var messageBox = document.getElementById('messageBox');
+                messageBox.style.display = 'none';
+            });
+        });
+    </script>
+
+    <audio id="player" autoplay loop muted>
+    <source src="./music/music.mp3" type="audio/mp3" />
+</audio>
+</body>
+</html>
